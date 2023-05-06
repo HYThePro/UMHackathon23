@@ -7,6 +7,7 @@ import plotly.express as px
 import altair as alt
 
 data = pd.read_csv("updated_data.csv")
+st.set_page_config(page_title="Venture Capital")
 
 def run_website():
     with st.sidebar:
