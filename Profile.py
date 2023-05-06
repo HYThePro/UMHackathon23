@@ -19,7 +19,7 @@ def run_website():
         
     if(selected == 'Company Profile'):
 
-        st.selectbox(label=name of company, options=data['name_c']
+        st.selectbox(label='Name of company', options=data['name_c']
 
         
 
