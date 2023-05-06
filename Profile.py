@@ -36,8 +36,10 @@ def run_website():
                 st.write("Median share in %: ", row[16])
                 st.write("Maximum share in %: ", row[17])
                 st.write("Categories: {}, {}, {}, {}, {}, {}, {}, {}".format(row[18], row[19], row[20], row[21], row[23], row[24], row[25], row[26]))
-                chart_data = pd.DataFrame([[row[2], row[5], row[8], row[9], row[10], row[11]]], columns=["Total Funding", "Revenue", "Revenue growth", "EBIT", "Employee Growth (6m)", "Employee Growth (12m)"])
-                st.bar_chart(chart_data)
+                chart_data1 = pd.DataFrame([[row[2], row[5], row[8], row[9], row[10], row[11]]], columns=["Total Funding", "Revenue", "Revenue growth", "EBIT", "Employee Growth (6m)", "Employee Growth (12m)"])
+                chart_data2 = pd.DataFrame([[row[8], row[10], row[11]]], columns=["Revenue growth", "Employee Growth (6m)", "Employee Growth (12m)"])
+                st.bar_chart(chart_data1)
+                st.bar_chart(chart_data2)
             count = count+1
             
 
