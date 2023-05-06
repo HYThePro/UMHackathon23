@@ -53,7 +53,13 @@ def run_website():
         st.plotly_chart(sc)
 
        # Create a line graph using matplotlib
-         plt.plot(data['x'], data['y'])
+        x_column = 'revenue_growth(%)'
+        y_column = 'employee_growth(%)'
+        x = filtered_data[x_column]
+        y = filtered_data[y_column]
+
+        filtered_data = data[(data[x_column].notnull()) & (data[x_column] != 0) & (data[x_column] != 1) & (data[y_column].notnull()) & (data[y_column] != 0) & (data[y_column] != 1)]
+        plt.plot(data[x], data[y])
 
        # Display the graph using Streamlit
          st.pyplot()
