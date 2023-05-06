@@ -10,7 +10,7 @@ data = pd.read_csv("updated_data.csv")
 
 def run_website():
     with st.sidebar:
-        selected = option_menu('Vental Capital Analysis Website',
+        selected = option_menu('Venture Capital Analysis Website',
                             
                             ['Analytics Dashboard',
                              'Categorical ranking',
