@@ -19,7 +19,7 @@ def run_website():
         
     if(selected == 'Company Profile'):
 
-        st.write("To be coded")
+        st.selectbox(label=name of company, options=data['name_c']
 
         
 
