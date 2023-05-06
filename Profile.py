@@ -61,14 +61,32 @@ def run_website():
         
         fig = go.Figure(data=go.Scatter(x=data["revenue_growth(%)"], y=data["employee_growth_6(%)"], mode='markers'))
         # Add axis labels and title
-        fig.update_layout(xaxis_title="Incorporation Date", yaxis_title="Total Revenue", title="Revenue over time")
+        fig.update_layout(xaxis_title="Revenue_growth(%)", yaxis_title="Employee_growth_6(%)", title="Revenue Growth vs Employee Growth (6 months)")
 
         # Show plot
         st.plotly_chart(fig)
 
+        fig = go.Figure(data=go.Scatter(x=data["revenue_growth(%)"], y=data["employee_growth_6(%)"], mode='markers'))
+        # Add axis labels and title
+        fig.update_layout(xaxis_title="Revenue_growth(%)", yaxis_title="Employee_growth_6(%)", title="Revenue Growth vs Employee Growth (6 months)")
+
         # Show plot
         st.plotly_chart(fig)
 
+        x_data1 = ['Minimum Share', 'Medium Share', 'Maximum Share']  # X-axis names
+                # Use y-axis values as x-axis values
+                y_data1 = [data['min_share'], data['median_share'], data['max_share']] 
+
+                # Create bar trace for y-variable
+                trace1 = go.Bar(x=x_data1, y=y_data1,width=0.5)
+
+                # Create layout
+                layout1 = go.Layout(
+                    title='"Minimum Share","Median Share","Maximum Share",
+                    xaxis=dict(title='Features'),
+                    yaxis=dict(title='Amount'))
+                
+                fig1 = go.Figure(data=[trace1], layout=layout1)
 
         # Create a slider to select the year
         year = st.slider("Select year", min_value=int(data["incorporated_date_c"].min()), max_value=int(data["incorporated_date_c"].max()))
@@ -357,7 +375,7 @@ def run_website():
                 st.write("Categories: {}, {}, {}, {}, {}, {}, {}, {}".format(row[18], row[19], row[20], row[21], row[23], row[24], row[25], row[26]))
                 # Sample data
                 
-                x_data1 = ['Total Funding', 'Revenue', 'Ebit']  # Y-axis names
+                x_data1 = ['Total Funding', 'Revenue', 'Ebit']  # X-axis names
                 # Use y-axis values as x-axis values
                 y_data1 = [row[2], row[5], row[9]] 
 
@@ -376,7 +394,7 @@ def run_website():
                 # Display the figure
                 st.plotly_chart(fig1)
                
-                x_data2 = ['Revenue Growth', 'Employee Growth(6m)', 'Employee Growth (12m)']  # Y-axis names
+                x_data2 = ['Revenue Growth', 'Employee Growth(6m)', 'Employee Growth (12m)']  # X-axis names
                 # Use y-axis values as x-axis values
                 y_data2 = [row[8], row[10], row[11]] 
 
