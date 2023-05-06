@@ -39,7 +39,7 @@ def run_website():
                 st.write("Maximum share in %: ", row[17])
                 st.write("Categories: {}, {}, {}, {}, {}, {}, {}, {}".format(row[18], row[19], row[20], row[21], row[23], row[24], row[25], row[26]))
                 chart_data1 = pd.DataFrame([[row[8], row[10], row[11]]], columns=["Total Funding", "Revenue", "EBIT"])
-                chart = alt.Chart(chart_data1).mark_bar().encode(x=alt.X('variable:N', title='Column Name'),y=alt.Y('value:Q', title='Value')).properties(width=500,height=300)
+                chart = alt.Chart(chart_data1).mark_bar().encode(x=alt.X('variable:N', title='Column Name'),y=alt.Y('value:Q', title='Value'))
                 st.altair_chart(chart, use_container_width=True)
                 chart_data2 = pd.DataFrame([[row[8], row[10], row[11]]], columns=["Revenue growth", "Employee Growth (6m)", "Employee Growth (12m)"])
             count = count+1
