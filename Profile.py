@@ -24,7 +24,7 @@ def run_website():
         for value in data['name_c']:
             if input == values:
                 st.write("Name of company: " , value)
-                st.write("Incorporated date: ", data[count]['incorporated_date_c']
+                st.write("Incorporated date: ", data[count]['incorporated_date_c'])
        count = count + 1
             
 
