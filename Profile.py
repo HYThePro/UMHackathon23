@@ -370,7 +370,7 @@ def run_website():
                 st.write("Minimum share in %: ", row[15])
                 st.write("Median share in %: ", row[16])
                 st.write("Maximum share in %: ", row[17])
-                st.write("Categories: {}, {}, {}, {}, {}, {}, {}, {}".format(row[18], row[19], row[20], row[21], row[23], row[24], row[25], row[26]))
+                st.write("Categories: ", row[18])
                 # Sample data
                 
                 x_data1 = ['Total Funding', 'Revenue', 'Ebit']  # X-axis names
