@@ -23,9 +23,10 @@ def run_website():
         count = 0
         for value in data['name_c']:
             if input == values:
+                row = data.iloc[count]
                 st.write("Name of company: " , value)
                 st.write("Incorporated date: ", data[count]['incorporated_date_c'])
-       count = count + 1
+        count = count + 1
             
 
 run_website()
