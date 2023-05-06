@@ -90,7 +90,10 @@ def run_website():
         data_filtered = data[data["incorporated_date_c"] == year]
 
         # Create the plot using Plotly Express
-        fig = px.scatter(data_filtered, x="incorporated_date_c", y="total_funding_c")
+        fig = px.scatter(data_filtered, x="incorporated_date", y="total_funding")
+        
+        # Set the title of the chart
+        fig.update_layout(title='Incoporate Date vs Total funding')
 
         # Display the plot
         st.plotly_chart(fig)
