@@ -82,7 +82,7 @@ def run_website():
 
         # Create layout
         layout1 = go.Layout(
-                    title='"Minimum Share","Median Share","Maximum Share",
+                    title='"Minimum Share","Median Share","Maximum Share"',
                     xaxis=dict(title='Features'),
                     yaxis=dict(title='Amount'))
                 
