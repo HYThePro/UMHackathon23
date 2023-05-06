@@ -38,7 +38,7 @@ def run_website():
                 st.write("Maximum share in %: ", row[17])
                 st.write("Categories: {}, {}, {}, {}, {}, {}, {}, {}".format(row[18], row[19], row[20], row[21], row[23], row[24], row[25], row[26]))
                 fig = plt.figure()
-                chart_data1 = pd.DataFrame([[row[2], row[5], row[8], row[9], row[10], row[11]]], columns=["Total Funding", "Revenue", "Revenue growth", "EBIT", "Employee Growth (6m)", "Employee Growth (12m)"])
+                chart_data1 = pd.DataFrame([[row[8], row[10], row[11]]], columns=["Total Funding", "Revenue", "EBIT"])
                 st.pyplot(fig)
                 fig = plt.figure()
                 chart_data2 = pd.DataFrame([[row[8], row[10], row[11]]], columns=["Revenue growth", "Employee Growth (6m)", "Employee Growth (12m)"])
