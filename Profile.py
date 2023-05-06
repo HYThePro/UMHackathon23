@@ -19,7 +19,7 @@ def run_website():
         
     if(selected == 'Company Profile'):
 
-        input = st.selectbox(label='Name of company', options=data['name_c']
+        input = st.selectbox(label='Name of company', options=data['name_c'])
         for value in data['name_c']:
             if input == values:
                 st.write("Name of company: " , value)
