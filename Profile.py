@@ -20,13 +20,13 @@ def run_website():
     if(selected == 'Company Profile'):
 
         input = st.selectbox(label='Name of company', options=data['name_c'])
-        count = 0
+        
         for value in data['name_c']:
             if input == value:
                 row = data.iloc[count]
                 st.write("Name of company: " , value)
-                st.write("Incorporated date: ", data['incorporated_date_c'][row])
-        count = count + 1
+                st.write("Incorporated date: ", row[1])
+        
             
 
 run_website()
