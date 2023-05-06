@@ -58,16 +58,45 @@ def run_website():
         # Show plot
         st.plotly_chart(fig)
         
-        # Create a line chart
-        fig = go.Figure()
-        fig.add_trace(go.Scatter(x=data['revenue_growth(%)'], y=data['employee_growth_6(%)'], mode='lines'))
+        # Calculate the best fit line
+        m, b = np.polyfit(data['revenue_growth(%)'], data['employee_growth_6(%)'], 1)
 
-        # Set chart title and axis labels
-        fig.update_layout(title='Revenue Growth vs Employee Growth (6 months)', xaxis_title='Revenue Growth (%)', yaxis_title='Employee Growth (6 months)')
+        # Create the trace for the scatter plot
+        trace1 = go.Scatter(
+            x=data['revenue_growth(%)'],
+            y=data['employee_growth_6(%)'],
+            mode='markers',
+            name='Data'
+           )
 
-        # Display the chart in Streamlit
+        # Create the trace for the best fit line
+        trace2 = go.Scatter(
+            x=data['revenue_growth(%)'],
+            y=m*x + b,
+            mode='lines',
+            name='Best Fit Line'
+        )
+
+        # Create the layout for the chart
+        layout = go.Layout(
+            title='Best Fit Line Chart',
+            xaxis=dict(title='Revenue Growth'),
+            yaxis=dict(title='Employee Growth(%)')
+        )
+
+        # Combine the traces and layout into a figure
+        fig = go.Figure(data=[trace1, trace2], layout=layout)
+
+        # Display the chart
+        fig.show()
+        
+        
+        fig = go.Figure(data=go.Scatter(x=data["revenue_growth(%)"], y=data["employee_growth_6(%)"], mode='markers'))
+        # Add axis labels and title
+        fig.update_layout(xaxis_title="Incorporation Date", yaxis_title="Total Revenue", title="Revenue over time")
+
+        # Show plot
         st.plotly_chart(fig)
-
 
         # Show plot
         st.plotly_chart(fig)
