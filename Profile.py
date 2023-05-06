@@ -62,7 +62,7 @@ def run_website():
         plt.plot(data[x], data[y])
 
        # Display the graph using Streamlit
-         st.pyplot()
+        st.pyplot()
 
         
 
