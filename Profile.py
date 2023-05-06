@@ -66,13 +66,6 @@ def run_website():
         # Show plot
         st.plotly_chart(fig)
 
-        fig = go.Figure(data=go.Scatter(x=data["revenue_growth(%)"], y=data["employee_growth_6(%)"], mode='markers'))
-        # Add axis labels and title
-        fig.update_layout(xaxis_title="Revenue_growth(%)", yaxis_title="Employee_growth_6(%)", title="Revenue Growth vs Employee Growth (6 months)")
-
-        # Show plot
-        st.plotly_chart(fig)
-
         x_data1 = ['Minimum Share', 'Medium Share', 'Maximum Share']  # X-axis names
         # Use y-axis values as x-axis values
         y_data1 = [data['min_share'], data['median_share'], data['max_share']] 
