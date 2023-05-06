@@ -51,11 +51,7 @@ def run_website():
         # Display the chart using Streamlit
         st.plotly_chart(sc)
 
-        # Create a line graph using Plotly
-        fig = px.line(data, x='revenue_growth(%)', y='employee_growth(%)')
-
-        # Display the graph using Streamlit
-        st.plotly_chart(fig)
+        
 
         fig = go.Figure(data=go.Scatter(x=data["incorporated_date_c"], y=data["revenue_c"], mode='markers'))
         # Add axis labels and title
