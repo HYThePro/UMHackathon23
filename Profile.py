@@ -24,8 +24,19 @@ def run_website():
         for value in data['name_c']:
             if input == value:
                 row = data.iloc[count]
-                st.write("Name of company: " , value)
                 st.write("Incorporated date: ", row[1])
+                st.write("Last valuation: ", row[3])
+                st.write("Amount raised during last funding round: ", row[4])
+                st.write("Date of last fund raise: ", row[6])
+                st.write("Date of financial year end: ", row[7])
+                st.write("Number of founder: ", row[12])
+                st.write("Number of funding round: ", row[13])
+                st.write("Number of shareholder: ", row[14])
+                st.write("Minimum share in %: ", row[15])
+                st.write("Median share in %: ", row[16])
+                st.write("Maximum share in %: ", row[17])
+                st.write("Categories: " + row[18] + ", " + row[19] + ", " + row[20] + ", " + row[21] + ", " + row[23] + ", " + row[24] + ", "
+                          + row[25] + ", " + row[26])
             count = count+1
             
 
