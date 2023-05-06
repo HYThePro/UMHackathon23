@@ -21,6 +21,6 @@ def run_website():
 
         st.selectbox(label='Name of company', options=data['name_c']
 
-        
+run_website()
 
 
