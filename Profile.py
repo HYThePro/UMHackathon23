@@ -74,19 +74,19 @@ def run_website():
         st.plotly_chart(fig)
 
         x_data1 = ['Minimum Share', 'Medium Share', 'Maximum Share']  # X-axis names
-                # Use y-axis values as x-axis values
-                y_data1 = [data['min_share'], data['median_share'], data['max_share']] 
+        # Use y-axis values as x-axis values
+        y_data1 = [data['min_share'], data['median_share'], data['max_share']] 
 
-                # Create bar trace for y-variable
-                trace1 = go.Bar(x=x_data1, y=y_data1,width=0.5)
+        # Create bar trace for y-variable
+        trace1 = go.Bar(x=x_data1, y=y_data1,width=0.5)
 
-                # Create layout
-                layout1 = go.Layout(
+        # Create layout
+        layout1 = go.Layout(
                     title='"Minimum Share","Median Share","Maximum Share",
                     xaxis=dict(title='Features'),
                     yaxis=dict(title='Amount'))
                 
-                fig1 = go.Figure(data=[trace1], layout=layout1)
+        fig1 = go.Figure(data=[trace1], layout=layout1)
 
         # Create a slider to select the year
         year = st.slider("Select year", min_value=int(data["incorporated_date_c"].min()), max_value=int(data["incorporated_date_c"].max()))
