@@ -5,6 +5,7 @@ import plotly.graph_objs as go
 import pickle
 import plotly.express as px
 import altair as alt
+import numpy as np
 
 data = pd.read_csv("updated_data.csv")
 st.set_page_config(page_title="Venture Capital")
