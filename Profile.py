@@ -3,6 +3,7 @@ import pandas as pd
 from streamlit_option_menu import option_menu
 import pickle
 import matplotlib.pyplot as plt
+import altair as alt
 
 data = pd.read_csv("updated_data.csv")
 
