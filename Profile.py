@@ -22,7 +22,7 @@ def run_website():
         input = st.selectbox(label='Name of company', options=data['name_c'])
         count = 0
         for value in data['name_c']:
-            if input == values:
+            if input == value:
                 row = data.iloc[count]
                 st.write("Name of company: " , value)
                 st.write("Incorporated date: ", data[count]['incorporated_date_c'])
