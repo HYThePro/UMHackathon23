@@ -25,7 +25,7 @@ def run_website():
             if input == value:
                 row = data.iloc[count]
                 st.write("Name of company: " , value)
-                st.write("Incorporated date: ", data['incorporated_date_c'][count])
+                st.write("Incorporated date: ", data['incorporated_date_c'][row])
         count = count + 1
             
 
