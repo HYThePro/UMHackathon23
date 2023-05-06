@@ -25,7 +25,7 @@ def run_website():
             if input == values:
                 st.write("Name of company: " , value)
                 st.write("Incorporated date: ", data['count']['incorporated_date_c']
-            count += 1
+            count = count + 1
 
 run_website()
 
