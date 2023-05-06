@@ -59,6 +59,12 @@ def run_website():
         # Show plot
         st.plotly_chart(fig)
         
+        # Create button to filter data
+        button = st.button('Employee Growth (12 months)')
+        
+        # Create a container to hold the button and the plot
+        container = st.container()
+
         fig = go.Figure(data=go.Scatter(x=data["revenue_growth(%)"], y=data["employee_growth_6(%)"], mode='markers'))
         # Add axis labels and title
         fig.update_layout(xaxis_title="Revenue_growth(%)", yaxis_title="Employee_growth_6(%)", title="Revenue Growth vs Employee Growth (6 months)")
@@ -66,23 +72,16 @@ def run_website():
         # Show plot
         st.plotly_chart(fig)
 
-        x_data1 = ['Minimum Share', 'Medium Share', 'Maximum Share']  # X-axis names
-        # Use y-axis values as x-axis values
-        y_data1 = [data['min_share'], data['median_share'], data['max_share']] 
+        # If button is clicked, filter data and show the filtered scatter plot
+        if button:
+            fig = go.Figure(data=go.Scatter(x=data["revenue_growth(%)"], y=data["employee_growth_12(%)"], mode='markers'))
+            
+            # Add axis labels and title
+            fig.update_layout(xaxis_title="Revenue_growth(%)", yaxis_title="Employee_growth_12(%)", title="Revenue Growth vs Employee Growth (12 months)")
 
-        # Create bar trace for y-variable
-        trace1 = go.Bar(x=x_data1, y=y_data1,width=0.5)
+            # Show plot
+            st.plotly_chart(fig)
 
-        # Create layout
-        layout1 = go.Layout(
-                    title='"Minimum Share","Median Share","Maximum Share"',
-                    xaxis=dict(title='Features'),
-                    yaxis=dict(title='Amount'))
-                
-        fig1 = go.Figure(data=[trace1], layout=layout1)
-        
-        # Display the figure
-        st.plotly_chart(fig1)
 
         # Create a slider to select the year
         year = st.slider("Select year", min_value=int(data["incorporated_date_c"].min()), max_value=int(data["incorporated_date_c"].max()))
