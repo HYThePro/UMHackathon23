@@ -80,6 +80,9 @@ def run_website():
                     yaxis=dict(title='Amount'))
                 
         fig1 = go.Figure(data=[trace1], layout=layout1)
+        
+        # Display the figure
+        st.plotly_chart(fig1)
 
         # Create a slider to select the year
         year = st.slider("Select year", min_value=int(data["incorporated_date_c"].min()), max_value=int(data["incorporated_date_c"].max()))
