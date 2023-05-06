@@ -40,14 +40,7 @@ def run_website():
                 chart_data1 = pd.DataFrame([[row[8], row[10], row[11]]], columns=["Total Funding", "Revenue", "EBIT"])
                 chart = alt.Chart(data).mark_bar().encode(x=alt.X('variable:N', title='Column Name'),y=alt.Y('value:Q', title='Value')).properties(width=500,height=300)
                 st.altair_chart(chart, use_container_width=True)
-
-                fig, ax = plt.subplots()
-                ax.hist(chart_data1)
-                st.pyplot(fig)
-                st.pyplot(fig)
-                fig = plt.figure()
                 chart_data2 = pd.DataFrame([[row[8], row[10], row[11]]], columns=["Revenue growth", "Employee Growth (6m)", "Employee Growth (12m)"])
-                st.pyplot(fig)
             count = count+1
             
 
